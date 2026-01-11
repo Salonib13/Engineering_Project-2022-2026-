@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Beauty | PricePredictor</title>
+  <link rel="stylesheet" href="static/cloth.css" />
+</head>
+<body>
+
+  
+  <header class="navbar">
+    <div class="logo">PricePredictor</div>
+    <nav class="nav-links">
+      <a href="{{ url_for('home') }}">Home</a>
+      <a href="{{ url_for('categories') }}">Categories</a>
+      <a href="{{ url_for('login') }}">Login</a>
+      <a href="{{ url_for('register') }}">Register</a>
+      <a href="{{ url_for('contact') }}">Contact</a>
+    </nav>
+</header>
+
+  
+  <section class="page-header">
+    <h1>Beauty Products</h1>
+    <p>Discover top beauty products and use AI to predict optimal selling prices.</p>
+  </section>
+
+  
+  <section class="product-grid">
+    <div class="product-card"><img src="{{ url_for('static', filename='beauty1.jpg') }}" alt=""><h3>Foundation</h3><p>Matte finish formula</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='beauty2.jpg') }}" alt=""><h3>Lipstick</h3><p>Rich red shades</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='beauty3.webp') }}" alt=""><h3>Mascara</h3><p>Long-lasting volume</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='beauty4.jpg') }}" alt=""><h3>Eye Shadow</h3><p>Bold & nude palette</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='beauty5.jpg') }}" alt=""><h3>Makeup Brushes</h3><p>Full brush set</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='beauty6.webp') }}" alt=""><h3>Compact Powder</h3><p>Oil control effect</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='beauty7.jpg') }}" alt=""><h3>Highlighter</h3><p>Shimmery glow</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='beauty8.webp') }}" alt=""><h3>Blush</h3><p>Peach tint</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='beauty9.webp') }}" alt=""><h3>Serum</h3><p>Vitamin C boost</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='beauty10.jpg') }}" alt=""><h3>Face Wash</h3><p>Gentle cleanser</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='beauty11.jpg') }}" alt=""><h3>Moisturizer</h3><p>SPF 15</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='beauty12.webp') }}" alt=""><h3>Face Mask</h3><p>Clay detox</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='beauty13.avif') }}" alt=""><h3>Hair Oil</h3><p>Deep nourishment</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='beauty14.webp') }}" alt=""><h3>Shampoo</h3><p>Herbal care</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='beauty15.jpg') }}" alt=""><h3>Conditioner</h3><p>Smooth & soft</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='beauty16.jpg') }}" alt=""><h3>Perfume</h3><p>Luxury scent</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='beauty17.webp') }}" alt=""><h3>Nail Polish</h3><p>Glossy finish</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='beauty18.webp') }}" alt=""><h3>Body Lotion</h3><p>Silky smooth skin</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='beauty19.webp') }}" alt=""><h3>Makeup Remover</h3><p>Gentle wipes</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='beauty20.webp') }}" alt=""><h3>Facial Kit</h3><p>At-home spa</p><button class="btn">Predict Price</button></div>
+  </section>
+  
+ 
+<footer class="footer" id="contact">
+  <p>Made with ❤️ for Sellers & Shoppers</p>
+  <small>© 2025 PricePredictor. All rights reserved.</small>
+</footer>
+
+
+<div id="predictModal" style="display:none; position:fixed; top:10%; left:35%; background:#fff; padding:20px; border-radius:8px; box-shadow:0 0 15px rgba(0,0,0,0.2); z-index:1000;">
+  <h3>Enter Product Details</h3>
+  <form id="predictForm">
+    <input type="number" name="original_price" placeholder="Original Price" required><br>
+    <input type="number" name="discount_percentage" placeholder="Discount Percentage" required><br>
+    <input type="number" name="rating" placeholder="Rating" step="0.1" required><br>
+    <input type="number" name="review_count" placeholder="Review Count" required><br>
+    <input type="number" name="seller_rating" placeholder="Seller Rating" step="0.1" required><br>
+    <input type="number" name="competitor_price" placeholder="Competitor Price" required><br>
+    <input type="number" name="demand_index" placeholder="Demand Index" step="0.1" required><br>
+    <input type="number" name="shipping_cost" placeholder="Shipping Cost" required><br>
+    <input type="text" name="category" placeholder="Category" required><br>
+    <input type="text" name="brand" placeholder="Brand" required><br>
+    <input type="text" name="stock_availability" placeholder="Stock Availability" required><br>
+    <button type="submit">Predict</button>
+    <button type="button" onclick="closeModal()">Cancel</button>
+  </form>
+  <div id="predictionResult" style="margin-top:10px;"></div>
+</div>
+
+<script>
+  const buttons = document.querySelectorAll('.btn');
+  const modal = document.getElementById('predictModal');
+  const form = document.getElementById('predictForm');
+  const result = document.getElementById('predictionResult');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      modal.style.display = 'block';
+    });
+  });
+
+  function closeModal() {
+    modal.style.display = 'none';
+    result.innerText = '';
+    form.reset();
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch('/predict', {
+        method: 'POST',
+        body: formData
+      });
+      const data = await response.json();
+
+      if (data.price !== undefined) {
+        result.innerText = `Predicted Price: ₹${data.price}`;
+      } else {
+        result.innerText = `Error: ${data.error}`;
+      }
+    } catch (error) {
+      result.innerText = `Error: ${error}`;
+    }
+  });
+</script>
+
+</body>
+</html>
+
+</body>
+</html>

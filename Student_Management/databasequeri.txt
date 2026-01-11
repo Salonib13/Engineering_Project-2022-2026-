@@ -1,0 +1,14 @@
+create table students (
+    id int auto_increment primary key,
+    name varchar(50) not null,
+    age int not null check (age between 17 and 30),
+    gender varchar(10),
+    email varchar(50) unique not null,
+    phone varchar(15) unique,
+    course varchar(50) not null,
+    year_of_study int check (year_of_study between 1 and 4),
+    address varchar(150),
+    created_at timestamp default current_timestamp,
+    updated_at timestamp default current_timestamp
+        on update current_timestamp
+);

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home Decor | PricePredictor</title>
+  <link rel="stylesheet" href="static/cloth.css" />
+</head>
+<body>
+
+  
+  <header class="navbar">
+    <div class="logo">PricePredictor</div>
+    <nav class="nav-links">
+      <a href="{{ url_for('home') }}">Home</a>
+      <a href="{{ url_for('categories') }}">Categories</a>
+      <a href="{{ url_for('login') }}">Login</a>
+      <a href="{{ url_for('register') }}">Register</a>
+      <a href="{{ url_for('contact') }}">Contact</a>
+    </nav>
+  </header>
+
+  
+  <section class="page-header">
+    <h1>Home Decor Products</h1>
+    <p>Decorate your home beautifully and smartly price your products with AI insights.</p>
+  </section>
+
+  
+  <section class="product-grid">
+    <div class="product-card"><img src="{{ url_for('static', filename='wall.webp') }}" alt=""><h3>Wall Art</h3><p>Abstract canvas decor</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='vase.jpg') }}" alt=""><h3>Vase Set</h3><p>Elegant ceramic vases</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='floor.webp') }}" alt=""><h3>Floor Lamp</h3><p>Stylish modern lighting</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='decor4.webp') }}" alt=""><h3>Rug</h3><p>Textured area rug</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='decor5.jpg') }}" alt=""><h3>Pillows</h3><p>Decorative cushions</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='decor6.jpg') }}" alt=""><h3>Candle Holders</h3><p>Elegant centerpiece set</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='decor7.webp') }}" alt=""><h3>Wall Clock</h3><p>Minimalist style</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='decor8.jpg') }}" alt=""><h3>Mirror</h3><p>Round decorative mirror</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='decor9.jpg') }}" alt=""><h3>Planter</h3><p>Indoor plant pot</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='decor10.jpg') }}" alt=""><h3>Fairy Lights</h3><p>Warm LED string lights</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='decor11.webp') }}" alt=""><h3>Wall Shelf</h3><p>Rustic wood shelves</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='decor12.jpg') }}" alt=""><h3>Macrame Hanging</h3><p>Boho style decor</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='decor13.jpg') }}" alt=""><h3>Lanterns</h3><p>Vintage iron lantern</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='decor14.jpg') }}" alt=""><h3>Bookshelf</h3><p>Compact modern shelf</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='decor15.webp') }}" alt=""><h3>Curtains</h3><p>Sheer window curtains</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='decor16.webp') }}" alt=""><h3>Table Runner</h3><p>Embroidered decor</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='decor17.jpg') }}" alt=""><h3>Clock Set</h3><p>Vintage triple set</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='decor18.webp') }}" alt=""><h3>Decor Tray</h3><p>Wooden multipurpose tray</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='decor19.jpg') }}" alt=""><h3>Chair</h3><p>Accent single chair</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='decor20.jpg') }}" alt=""><h3>Lamp</h3><p>Tabletop night lamp</p><button class="btn">Predict Price</button></div>
+  </section>
+  
+  
+<footer class="footer" id="contact">
+  <p>Made with ❤️ for Sellers & Shoppers</p>
+  <small>© 2025 PricePredictor. All rights reserved.</small>
+</footer>
+
+
+<div id="predictModal" style="display:none; position:fixed; top:10%; left:35%; background:#fff; padding:20px; border-radius:8px; box-shadow:0 0 15px rgba(0,0,0,0.2); z-index:1000;">
+  <h3>Enter Product Details</h3>
+  <form id="predictForm">
+    <input type="number" name="original_price" placeholder="Original Price" required><br>
+    <input type="number" name="discount_percentage" placeholder="Discount Percentage" required><br>
+    <input type="number" name="rating" placeholder="Rating" step="0.1" required><br>
+    <input type="number" name="review_count" placeholder="Review Count" required><br>
+    <input type="number" name="seller_rating" placeholder="Seller Rating" step="0.1" required><br>
+    <input type="number" name="competitor_price" placeholder="Competitor Price" required><br>
+    <input type="number" name="demand_index" placeholder="Demand Index" step="0.1" required><br>
+    <input type="number" name="shipping_cost" placeholder="Shipping Cost" required><br>
+    <input type="text" name="category" placeholder="Category" required><br>
+    <input type="text" name="brand" placeholder="Brand" required><br>
+    <input type="text" name="stock_availability" placeholder="Stock Availability" required><br>
+    <button type="submit">Predict</button>
+    <button type="button" onclick="closeModal()">Cancel</button>
+  </form>
+  <div id="predictionResult" style="margin-top:10px;"></div>
+</div>
+
+
+<script>
+  const buttons = document.querySelectorAll('.btn');
+  const modal = document.getElementById('predictModal');
+  const form = document.getElementById('predictForm');
+  const result = document.getElementById('predictionResult');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      modal.style.display = 'block';
+    });
+  });
+
+  function closeModal() {
+    modal.style.display = 'none';
+    result.innerText = '';
+    form.reset();
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch('/predict', {
+        method: 'POST',
+        body: formData
+      });
+      const data = await response.json();
+
+      if (data.price !== undefined) {
+        result.innerText = `Predicted Price: ₹${data.price}`;
+      } else {
+        result.innerText = `Error: ${data.error}`;
+      }
+    } catch (error) {
+      result.innerText = `Error: ${error}`;
+    }
+  });
+</script>
+
+</body>
+</html>
+  </footer>
+
+</body>
+</html>

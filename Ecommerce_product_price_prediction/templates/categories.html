@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Categories | PricePredictor</title>
+  <link rel="stylesheet" href="static/categories.css" />
+</head>
+<body>
+
+  
+  <header class="navbar">
+    <div class="logo">PricePredictor</div>
+    <nav class="nav-links">
+      <a href="{{ url_for('home') }}">Home</a>
+      <a href="{{ url_for('categories') }}">Categories</a>
+      <a href="{{ url_for('login') }}">Login</a>
+      <a href="{{ url_for('register') }}">Register</a>
+      <a href="{{ url_for('contact') }}">Contact</a>
+    </nav>
+  </header>
+
+  
+  <section class="categories-page">
+    <h1>Product Categories</h1>
+    <p>Select a category to explore price trends or predict product prices.</p>
+
+    <div class="category-list">
+      <div class="category-card">
+        <img src="{{ url_for('static', filename='cloth.jpg') }}" alt="Clothing">
+        <h3>Clothing</h3>
+        <p>Fashion products including men's, women's and kids' wear.</p>
+        <a href="{{ url_for('cloth') }}">Explore</a>
+      </div>
+      <div class="category-card">
+        <img src="{{ url_for('static', filename='electronics.jpg') }}" alt="Electronic">
+        <h3>Electronics</h3>
+        <p>Phones, gadgets, accessories, and smart devices.</p>
+        <a href="{{ url_for('electronic') }}">Explore</a>
+      </div>
+      <div class="category-card">
+        <img src="{{ url_for('static', filename='homedecor.jpg') }}" alt="Homedecor">
+        <h3>Home Decor</h3>
+        <p>Items to beautify your space — lighting, furniture & more.</p>
+        <a href="{{ url_for('homedecor') }}">Explore</a>
+      </div>
+      <div class="category-card">
+        <img src="{{ url_for('static', filename='beauty.jpg') }}" alt="Beauty">
+        <h3>Beauty</h3>
+        <p>Cosmetics, skincare, and beauty accessories.</p>
+        <a href="{{ url_for('beauty') }}">Explore</a>
+      </div>
+    </div>
+  </section>
+
+  
+  <footer class="footer">
+    <p>Made with ❤️ by PricePredictor</p>
+    <small>© 2025 PricePredictor. All rights reserved.</small>
+  </footer>
+
+</body>
+</html>

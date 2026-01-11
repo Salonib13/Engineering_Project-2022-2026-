@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Electronics | PricePredictor</title>
+  <link rel="stylesheet" href="static/cloth.css" />
+</head>
+<body>
+
+  
+  <header class="navbar">
+    <div class="logo">PricePredictor</div>
+    <nav class="nav-links">
+      <a href="{{ url_for('home') }}">Home</a>
+      <a href="{{ url_for('categories') }}">Categories</a>
+      <a href="{{ url_for('login') }}">Login</a>
+      <a href="{{ url_for('register') }}">Register</a>
+      <a href="{{ url_for('contact') }}">Contact</a>
+    </nav>
+  </header>
+
+  
+  <section class="page-header">
+    <h1>Electronic Products</h1>
+    <p>Browse electronics and get price predictions instantly.</p>
+  </section>
+
+  
+  <section class="product-grid">
+    <div class="product-card"><img src="{{ url_for('static', filename='smart.webp') }}" alt=""><h3>Smartphone</h3><p>Latest Android device</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='laptop.webp') }}" alt=""><h3>Laptop</h3><p>Portable & powerful</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='smartwatch.jpg') }}" alt=""><h3>Smartwatch</h3><p>Track your fitness</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='blutooth.jpg') }}" alt=""><h3>Bluetooth Speaker</h3><p>Compact and loud</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='dslr.webp') }}" alt=""><h3>DSLR Camera</h3><p>Capture every moment</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='tab.jpg') }}" alt=""><h3>Tablet</h3><p>Lightweight productivity</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='gaming.webp') }}" alt=""><h3>Gaming Console</h3><p>Play in 4K</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='headphone.jpg') }}" alt=""><h3>Headphones</h3><p>Noise cancelling</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='monitor.webp') }}" alt=""><h3>Monitor</h3><p>HD LED display</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='router.webp') }}" alt=""><h3>WiFi Router</h3><p>Fast internet connection</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='earbuds.jpg') }}" alt=""><h3>Earbuds</h3><p>True wireless</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='vr.jpg') }}" alt=""><h3>VR Headset</h3><p>Immersive reality</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='drone.jpg') }}" alt=""><h3>Drone</h3><p>Fly and shoot</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='power.jpg') }}" alt=""><h3>Power Bank</h3><p>Charge anywhere</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='smarttv.jpg') }}" alt=""><h3>Smart TV</h3><p>Stream in HD</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='webcam.jpg') }}" alt=""><h3>Webcam</h3><p>Crystal clear video</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='mouse.webp') }}" alt=""><h3>Bluetooth Mouse</h3><p>Smooth control</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='gamingk.avif') }}" alt=""><h3>Gaming Keyboard</h3><p>RGB mechanical</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='projector.jpg') }}" alt=""><h3>Projector</h3><p>Big screen at home</p><button class="btn">Predict Price</button></div>
+    <div class="product-card"><img src="{{ url_for('static', filename='drive.png') }}" alt=""><h3>External Hard Drive</h3><p>1TB storage</p><button class="btn">Predict Price</button></div>
+</section>
+
+ 
+<footer class="footer" id="contact">
+  <p>Made with ❤️ for Sellers & Shoppers</p>
+  <small>© 2025 PricePredictor. All rights reserved.</small>
+</footer>
+
+
+<div id="predictModal" style="display:none; position:fixed; top:10%; left:35%; background:#fff; padding:20px; border-radius:8px; box-shadow:0 0 15px rgba(0,0,0,0.2); z-index:1000;">
+  <h3>Enter Product Details</h3>
+  <form id="predictForm">
+    <input type="number" name="original_price" placeholder="Original Price" required><br>
+    <input type="number" name="discount_percentage" placeholder="Discount Percentage" required><br>
+    <input type="number" name="rating" placeholder="Rating" step="0.1" required><br>
+    <input type="number" name="review_count" placeholder="Review Count" required><br>
+    <input type="number" name="seller_rating" placeholder="Seller Rating" step="0.1" required><br>
+    <input type="number" name="competitor_price" placeholder="Competitor Price" required><br>
+    <input type="number" name="demand_index" placeholder="Demand Index" step="0.1" required><br>
+    <input type="number" name="shipping_cost" placeholder="Shipping Cost" required><br>
+    <input type="text" name="category" placeholder="Category" required><br>
+    <input type="text" name="brand" placeholder="Brand" required><br>
+    <input type="text" name="stock_availability" placeholder="Stock Availability" required><br>
+    <button type="submit">Predict</button>
+    <button type="button" onclick="closeModal()">Cancel</button>
+  </form>
+  <div id="predictionResult" style="margin-top:10px;"></div>
+</div>
+
+<script>
+  const buttons = document.querySelectorAll('.btn');
+  const modal = document.getElementById('predictModal');
+  const form = document.getElementById('predictForm');
+  const result = document.getElementById('predictionResult');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      modal.style.display = 'block';
+    });
+  });
+
+  function closeModal() {
+    modal.style.display = 'none';
+    result.innerText = '';
+    form.reset();
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch('/predict', {
+        method: 'POST',
+        body: formData
+      });
+      const data = await response.json();
+
+      if (data.price !== undefined) {
+        result.innerText = `Predicted Price: ₹${data.price}`;
+      } else {
+        result.innerText = `Error: ${data.error}`;
+      }
+    } catch (error) {
+      result.innerText = `Error: ${error}`;
+    }
+  });
+</script>
+
+</body>
+</html>
+
+</body>
+</html>

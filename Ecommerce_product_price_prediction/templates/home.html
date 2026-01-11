@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PricePredictor</title>
+  <link rel="stylesheet" href="static/home.css" />
+</head>
+<body>
+  
+  <header class="navbar">
+    <div class="logo">PricePredictor</div>
+    <nav class="nav-links">
+      <a href="{{ url_for('home') }}">Home</a>
+      <a href="{{ url_for('categories') }}">Categories</a>
+      <a href="{{ url_for('login') }}">Login</a>
+      <a href="{{ url_for('register') }}">Register</a>
+      <a href="{{ url_for('contact') }}">Contact</a>
+    </nav>
+    </header>
+
+  
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Predict Product Prices <br> with AI-Powered Insights</h1>
+      <p>Upload product details and get smart pricing suggestions powered by Machine Learning.</p>
+      <button class="btn">Get Started</button>
+    </div>
+    <div class="hero-img">
+      <img src="{{ url_for('static', filename='hero.jpg') }}" alt="hero">
+    </div>
+  </section>
+
+  
+  <section id="categories" class="categories">
+    <h2>Shop by Categories</h2>
+    <div class="category-grid">
+        <div class="category-card">
+          <img src="{{ url_for('static', filename='cloth.jpg') }}" alt="Clothing" class="category-img">
+          <p>Clothing</p>
+        </div>
+        <div class="category-card">
+          <img src="{{ url_for('static', filename='electronics.jpg') }}" alt="Electronics" class="category-img">
+          <p>Electronics</p>
+        </div>
+        <div class="category-card">
+          <img src="{{ url_for('static', filename='homedecor.jpg') }}" alt="Homedecor" class="category-img">
+          <p>Home Decor</p>
+        </div>
+        <div class="category-card">
+          <img src="{{ url_for('static', filename='beauty.jpg') }}" alt="Beauty" class="category-img">
+          <p>Beauty</p>
+        </div>
+      </div>
+        </section>
+
+  
+  <section id="predict" class="highlight">
+    <h2>Smarter Pricing, Better Profits</h2>
+    <p>Our AI model analyzes historical data, demand trends, and product features to suggest the best price range for your listings.</p>
+    <button class="btn purple">Try Prediction</button>
+  </section>
+
+  
+  <footer id="contact" class="footer">
+    <p>Made with ❤️ for Sellers & Shoppers</p>
+    <small>© 2025 PricePredictor. All rights reserved.</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
