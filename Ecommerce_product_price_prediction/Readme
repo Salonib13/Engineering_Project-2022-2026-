@@ -1,0 +1,35 @@
+E-commerce Product Price Prediction
+
+A Machine Learning-based web application that predicts product prices using historical data.
+This project demonstrates end-to-end development — from model building to deployment using a web interface.
+
+Project Overview :-
+This project uses Linear Regression to predict product prices based on historical datasets.
+A lightweight Flask web app allows users to input product features and get predicted prices instantly.
+
+Tech Stack :-
+Machine Learning: Scikit-learn
+Programming Language: Python
+Backend: Flask
+Frontend: HTML, CSS, JavaScript
+
+Features :-
+Predict product prices using trained ML model
+Fast and lightweight Flask backend
+User-friendly web interface
+
+Machine Learning Model :-
+Algorithm: Linear Regression
+Library: Scikit-learn
+Workflow:
+Data preprocessing
+Feature selection
+Model training
+Model evaluation
+Model serialization using pickle
+
+How It Works :-
+User inputs product details in the web form
+Data is sent to Flask backend
+Model predicts the price
+Predicted result is displayed on UI
